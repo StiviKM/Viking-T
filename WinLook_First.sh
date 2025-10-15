@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e  # Exit on error
 
-echo "🚀 Starting Viking-T installation..."
+echo "🚀 Starting Win Lookalike installation..."
 
 # Ensure script is not run as root
 if [ "$EUID" -eq 0 ]; then
@@ -36,15 +36,10 @@ cd "$HOME/ArcMenu"
 make install
 cd ~
 
-# === 6. Enable both extensions ===
-echo "⚙️ Enabling GNOME extensions..."
-gnome-extensions enable dash-to-panel@jderose9.github.com || echo "⚠️ Could not enable Dash-to-Panel yet."
-gnome-extensions enable arcmenu@arcmenu.com || echo "⚠️ Could not enable ArcMenu yet."
-
-# === 7. Cleanup ===
+# === 6. Cleanup ===
 rm -f /tmp/dash-to-panel.zip
 rm -rf "$HOME/ArcMenu"
 
 echo
-echo "✅ Viking-T base installation complete!"
-echo "Please log out and log back in, then run the next script (viking-t-finalize.sh)."
+echo "✅ Win Lookalike installation complete!"
+echo "Please log out and log back in, then run the next script (WinLook_Second.sh)."
