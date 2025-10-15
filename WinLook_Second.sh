@@ -60,7 +60,11 @@ gnome-extensions enable arcmenu@arcmenu.com || echo "❌ Could not enable ArcMen
 gnome-extensions disable arcmenu@arcmenu.com || true                                # Enable/Disable Loop to bypass GNOME restrictions
 gnome-extensions enable arcmenu@arcmenu.com
 
-# === 5. Cleanup unnecessary files ===
+# === 5. Set pinned apps on Dash ===
+echo "📌 Setting pinned apps..."
+gsettings set org.gnome.shell favorite-apps "['org.mozilla.firefox.desktop', 'org.gnome.Nautilus.desktop']"
+
+# === 6. Cleanup unnecessary files ===
 echo "🧹 Cleaning up..."
 rm -f /tmp/dash-to-panel.zip
 rm -rf "$WIN_DIR"
