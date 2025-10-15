@@ -14,7 +14,7 @@ echo "📦 Installing required packages..."
 sudo dnf install -y make git wget gnome-extensions-app
 
 # === 2. Clone Win_Lookalike repository ===
-echo "🧩 Cloning Win_Lookalike repository..."
+echo "🧩 Cloning Win Lookalike repository..."
 git clone https://github.com/StiviKM/Win_Lookalike "$HOME/Win_Lookalike"
 
 # === 3. Copy the icon file to home ===
