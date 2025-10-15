@@ -40,6 +40,9 @@ echo "🛠️ Installing icon theme..."
 ./install.sh
 cd ~
 
+echo "🎨 Applying Win11 icon theme..."
+gsettings set org.gnome.desktop.interface icon-theme "Win11-icon-theme"
+
 # === 3. Move wallpaper and set background ===
 if [ -f "$WALLPAPER_SRC" ]; then
   echo "🖼️ Moving and applying wallpaper..."
