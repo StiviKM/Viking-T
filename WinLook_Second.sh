@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e  # Exit on error
 
-echo "🚀 Starting Viking-T final setup and cleanup..."
+echo "🚀 Starting Win Lookalike final setup and cleanup..."
 
 # === Paths ===
 VIKING_DIR="$HOME/Viking-T"
@@ -65,6 +65,5 @@ rm -rf "$VIKING_DIR"
 rm -rf "$ICON_DIR"
 
 echo
-echo "✅ Viking-T setup completed successfully!"
+echo "✅ Win Lookalike setup completed successfully!"
 echo "Your wallpaper, icons, and extensions are now active."
-echo "You can reload GNOME Shell with Alt+F2 → 'r' → Enter to apply final changes."
