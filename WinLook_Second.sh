@@ -4,13 +4,13 @@ set -e  # Exit on error
 echo "🚀 Starting Win Lookalike final setup and cleanup..."
 
 # === Paths ===
-VIKING_DIR="$HOME/Viking-T"
-WALLPAPER_SRC="$VIKING_DIR/Wallpaper.jpg"
+WIN_DIR="$HOME/Win_Lookalike"
+WALLPAPER_SRC="$WIN_DIR/Wallpaper.jpg"
 WALLPAPER_DST="$HOME/.viking-wallpaper.jpg"
 ICON_REPO="https://github.com/yeyushengfan258/Win11-icon-theme.git"
 ICON_DIR="$HOME/Win11-icon-theme"
-DTP_CONF="$VIKING_DIR/Dash_To_Panel_Win"
-ARC_CONF="$VIKING_DIR/Arc_Menu_Win"
+DTP_CONF="$WIN_DIR/Dash_To_Panel_Win"
+ARC_CONF="$WIN_DIR/Arc_Menu_Win"
 
 # === 1. Load GNOME extension settings ===
 if [ -f "$DTP_CONF" ]; then
@@ -50,7 +50,7 @@ if [ -f "$WALLPAPER_SRC" ]; then
   gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER_DST"
   gsettings set org.gnome.desktop.background picture-uri-dark "file://$WALLPAPER_DST"
 else
-  echo "⚠️ Wallpaper.jpg not found in $VIKING_DIR."
+  echo "⚠️ Wallpaper.jpg not found in $WIN_DIR."
 fi
 
 # === 4. Enable extensions ===
@@ -61,7 +61,7 @@ gnome-extensions enable arcmenu@arcmenu.com || echo "❌ Could not enable ArcMen
 # === 5. Cleanup unnecessary files ===
 echo "🧹 Cleaning up..."
 rm -f /tmp/dash-to-panel.zip
-rm -rf "$VIKING_DIR"
+rm -rf "$WIN_DIR"
 rm -rf "$ICON_DIR"
 
 echo
