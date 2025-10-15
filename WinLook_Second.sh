@@ -74,8 +74,9 @@ gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com || echo "❌ Coul
 echo "📌 Setting pinned apps..."
 gsettings set org.gnome.shell favorite-apps "['org.mozilla.firefox.desktop', 'org.gnome.Nautilus.desktop']"
 
-# === 6. Set Local Format to Bulgarian ===
+# === 6. Set Local Format to Bulgarian and add Traditional Phonetic Keyboard Layout ===
 gsettings set org.gnome.system.locale region 'bg_BG.UTF-8'
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'bg+phonetic')]"
 
 # === 7. Enabling minimize and maximize buttons ===
 gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
