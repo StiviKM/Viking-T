@@ -11,7 +11,7 @@ fi
 
 # === 1. Install dependencies ===
 echo "📦 Installing required packages..."
-sudo dnf install -y make git wget gnome-extensions-app meson
+sudo dnf install -y make git wget gnome-extensions-app meson ninja-build
 
 # === 2. Clone Win_Lookalike repository ===
 echo "🧩 Cloning Win Lookalike repository..."
@@ -43,10 +43,18 @@ cd "$HOME/desktop-icons-ng"
 ./local_install.sh
 cd ~
 
-# === 7. Cleanup ===
+# === 7. Clone and install AppIndicator Support ===
+echo "🔔 Cloning and installing AppIndicator Support..."
+git clone https://github.com/ubuntu/gnome-shell-extension-appindicator.git "$HOME/gnome-shell-extension-appindicator"
+meson "$HOME/gnome-shell-extension-appindicator" /tmp/g-s-appindicators-build
+ninja -C /tmp/g-s-appindicators-build install
+cd ~
+
+# === 8. Cleanup ===
 rm -f /tmp/dash-to-panel.zip
 rm -rf "$HOME/ArcMenu"
 rm -rf "$HOME/desktop-icons-ng"
+rm -rf "$HOME/gnome-shell-extension-appindicator"
 
 echo
 echo "✅ Win Lookalike installation complete!"
