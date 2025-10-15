@@ -13,13 +13,13 @@ fi
 echo "📦 Installing required packages..."
 sudo dnf install -y make git wget gnome-extensions-app
 
-# === 2. Clone Viking-T repository ===
-echo "🧩 Cloning Viking-T repository..."
-git clone https://github.com/StiviKM/Viking-T "$HOME/Viking-T"
+# === 2. Clone Win_Lookalike repository ===
+echo "🧩 Cloning Win_Lookalike repository..."
+git clone https://github.com/StiviKM/Win_Lookalike "$HOME/Win_Lookalike"
 
 # === 3. Copy the icon file to home ===
 echo "🖼️ Copying icon file..."
-cp "$HOME/Viking-T/.arc_icon.png" "$HOME/.arc_icon.png"
+cp "$HOME/Win_Lookalike/.arc_icon.png" "$HOME/.arc_icon.png"
 
 # === 4. Download and install Dash-to-Panel ===
 echo "⬇️ Downloading Dash-to-Panel extension..."
