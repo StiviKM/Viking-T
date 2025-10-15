@@ -64,7 +64,22 @@ gnome-extensions enable arcmenu@arcmenu.com
 echo "📌 Setting pinned apps..."
 gsettings set org.gnome.shell favorite-apps "['org.mozilla.firefox.desktop', 'org.gnome.Nautilus.desktop']"
 
-# === 6. Cleanup unnecessary files ===
+# === 6. Set Local Format to Bulgarian ===
+gsettings set org.gnome.system.locale region 'bg_BG.UTF-8'
+
+# === 7. Enabling minimize and maximize buttons ===
+gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+
+# === 8. Enabling Nautilus Settings === 
+gsettings set org.gnome.nautilus.list-view use-tree-view true
+gsettings set org.gnome.nautilus.preferences show-delete-permanently true
+gsettings set org.gnome.nautilus.preferences show-create-link true
+gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first true
+gsettings set org.gnome.nautilus.preferences recursive-search 'always'
+gsettings set org.gnome.nautilus.preferences show-image-thumbnails 'always'
+gsettings set org.gnome.nautilus.preferences show-directory-item-counts 'always'
+
+# === 9. Cleanup unnecessary files ===
 echo "🧹 Cleaning up..."
 rm -f /tmp/dash-to-panel.zip
 rm -rf "$WIN_DIR"
