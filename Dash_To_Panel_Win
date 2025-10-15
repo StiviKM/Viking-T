@@ -1,4 +1,5 @@
 [/]
+animate-appicon-hover=true
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
 dot-position='BOTTOM'
 extension-version=72
