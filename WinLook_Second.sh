@@ -57,6 +57,8 @@ fi
 echo "⚙️ Ensuring GNOME extensions are enabled..."
 gnome-extensions enable dash-to-panel@jderose9.github.com || echo "❌ Could not enable Dash-to-Panel."
 gnome-extensions enable arcmenu@arcmenu.com || echo "❌ Could not enable ArcMenu."
+gnome-extensions disable arcmenu@arcmenu.com || true                                # Enable/Disable Loop to bypass GNOME restrictions
+gnome-extensions enable arcmenu@arcmenu.com
 
 # === 5. Cleanup unnecessary files ===
 echo "🧹 Cleaning up..."
