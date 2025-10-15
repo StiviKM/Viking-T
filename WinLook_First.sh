@@ -11,7 +11,7 @@ fi
 
 # === 1. Install dependencies ===
 echo "📦 Installing required packages..."
-sudo dnf install -y make git wget gnome-extensions-app
+sudo dnf install -y make git wget gnome-extensions-app meson
 
 # === 2. Clone Win_Lookalike repository ===
 echo "🧩 Cloning Win Lookalike repository..."
@@ -36,9 +36,17 @@ cd "$HOME/ArcMenu"
 make install
 cd ~
 
-# === 6. Cleanup ===
+# === 6. Clone and install Desktop Icons NG ===
+echo "🖥️ Cloning and installing Desktop Icons NG..."
+git clone https://gitlab.com/rastersoft/desktop-icons-ng.git "$HOME/desktop-icons-ng"
+cd "$HOME/desktop-icons-ng"
+./local_install.sh
+cd ~
+
+# === 7. Cleanup ===
 rm -f /tmp/dash-to-panel.zip
 rm -rf "$HOME/ArcMenu"
+rm -rf "$HOME/desktop-icons-ng"
 
 echo
 echo "✅ Win Lookalike installation complete!"
