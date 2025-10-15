@@ -68,6 +68,7 @@ gnome-extensions enable arcmenu@arcmenu.com || echo "❌ Could not enable ArcMen
 gnome-extensions disable arcmenu@arcmenu.com || true
 gnome-extensions enable arcmenu@arcmenu.com
 gnome-extensions enable ding@rastersoft.com || echo "❌ Could not enable Desktop Icons NG."
+gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com || echo "❌ Could not enable AppIndicator Support."
 
 # === 5. Set pinned apps on Dash ===
 echo "📌 Setting pinned apps..."
