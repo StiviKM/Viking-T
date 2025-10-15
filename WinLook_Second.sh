@@ -11,6 +11,7 @@ ICON_REPO="https://github.com/yeyushengfan258/Win11-icon-theme.git"
 ICON_DIR="$HOME/Win11-icon-theme"
 DTP_CONF="$WIN_DIR/Dash_To_Panel_Win"
 ARC_CONF="$WIN_DIR/Arc_Menu_Win"
+DIN_CONF="$WIN_DIR/Desktop_Icons_NG_Win"  # Optional config for Desktop Icons NG
 
 # === 1. Load GNOME extension settings ===
 if [ -f "$DTP_CONF" ]; then
@@ -25,6 +26,13 @@ if [ -f "$ARC_CONF" ]; then
   dconf load /org/gnome/shell/extensions/arcmenu/ < "$ARC_CONF"
 else
   echo "⚠️ Arc_Menu_Win config not found."
+fi
+
+if [ -f "$DIN_CONF" ]; then
+  echo "🖥️ Loading Desktop Icons NG config..."
+  dconf load /org/gnome/shell/extensions/desktop-icons-ng/ < "$DIN_CONF"
+else
+  echo "⚠️ Desktop_Icons_NG_Win config not found. Default settings will be used."
 fi
 
 # === 2. Install Windows 11 icon theme ===
@@ -57,8 +65,9 @@ fi
 echo "⚙️ Ensuring GNOME extensions are enabled..."
 gnome-extensions enable dash-to-panel@jderose9.github.com || echo "❌ Could not enable Dash-to-Panel."
 gnome-extensions enable arcmenu@arcmenu.com || echo "❌ Could not enable ArcMenu."
-gnome-extensions disable arcmenu@arcmenu.com || true                                # Enable/Disable Loop to bypass GNOME restrictions
+gnome-extensions disable arcmenu@arcmenu.com || true
 gnome-extensions enable arcmenu@arcmenu.com
+gnome-extensions enable ding@rastersoft.com || echo "❌ Could not enable Desktop Icons NG."
 
 # === 5. Set pinned apps on Dash ===
 echo "📌 Setting pinned apps..."
@@ -87,4 +96,4 @@ rm -rf "$ICON_DIR"
 
 echo
 echo "✅ Win Lookalike setup completed successfully!"
-echo "Your wallpaper, icons, and extensions are now active."
+echo "Your wallpaper, icons, and extensions (including Desktop Icons NG) are now active."
