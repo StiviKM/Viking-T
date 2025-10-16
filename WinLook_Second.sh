@@ -75,8 +75,8 @@ fi
 echo "⚙️ Ensuring GNOME extensions are enabled..."
 gnome-extensions enable dash-to-panel@jderose9.github.com || echo "❌ Could not enable Dash-to-Panel."
 gnome-extensions enable arcmenu@arcmenu.com || echo "❌ Could not enable ArcMenu."
-gnome-extensions disable arcmenu@arcmenu.com || true
-gnome-extensions enable arcmenu@arcmenu.com
+gnome-extensions disable arcmenu@arcmenu.com || true     # Loop to make sure arcmenu loads fully
+gnome-extensions enable arcmenu@arcmenu.com              # Loop to make sure arcmenu loads fully
 gnome-extensions enable ding@rastersoft.com || echo "❌ Could not enable Desktop Icons NG."
 gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com || echo "❌ Could not enable AppIndicator Support."
 
