@@ -79,7 +79,7 @@ chmod +x "$HOME/Win_Lookalike/WinLook_Second.sh"
 
 echo "✅ WinLook_Second.sh will run automatically after next login."
 
-# === 8. Log out to apply changes ===
+# === 10. Log out to apply changes ===
 echo "🔁 Logging out in 5 seconds..."
 sleep 5
 gnome-session-quit --logout --no-prompt
