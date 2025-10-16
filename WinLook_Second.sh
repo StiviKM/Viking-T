@@ -25,14 +25,6 @@ else
   echo "⚠️ Dash_To_Panel_Win config not found."
 fi
 
-
-if [ -f "$DTP_CONF" ]; then
-  echo "🔧 Loading Dash to Panel config..."
-  dconf load /org/gnome/shell/extensions/dash-to-panel/ < "$DTP_CONF"
-else
-  echo "⚠️ Dash_To_Panel_Win config not found."
-fi
-
 if [ -f "$ARC_CONF" ]; then
   echo "🧭 Loading ArcMenu config..."
   dconf load /org/gnome/shell/extensions/arcmenu/ < "$ARC_CONF"
