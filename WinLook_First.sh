@@ -67,7 +67,7 @@ mkdir -p "$AUTOSTART_DIR"
 cat > "$AUTOSTART_FILE" <<EOF
 [Desktop Entry]
 Type=Application
-Exec=$HOME/Win_Lookalike/WinLook_Second.sh
+Exec=ptyxis -- bash -c '$HOME/Win_Lookalike/WinLook_Second.sh; echo; echo "✅ Script finished. You can close this window."; read -p "Press Enter to close..."'
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
