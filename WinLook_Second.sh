@@ -6,7 +6,7 @@ echo "🚀 Starting Win Lookalike final setup and cleanup..."
 # === Paths ===
 WIN_DIR="$HOME/Win_Lookalike"
 WALLPAPER_SRC="$WIN_DIR/Wallpaper.jpg"
-WALLPAPER_DST="$HOME/.viking-wallpaper.jpg"
+WALLPAPER_DST="$HOME/.win_wallpaper.jpg"
 ICON_REPO="https://github.com/yeyushengfan258/Win11-icon-theme.git"
 ICON_DIR="$HOME/Win11-icon-theme"
 DTP_CONF="$WIN_DIR/Dash_To_Panel_Win"
