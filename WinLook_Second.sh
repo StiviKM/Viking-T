@@ -25,6 +25,12 @@ else
   echo "⚠️ Dash_To_Panel_Win config not found."
 fi
 
+# Update ArcMenu config to use current user's home directory
+if [ -f "$ARC_CONF" ]; then
+  echo "🧭 Adjusting ArcMenu config for current user..."
+  sed -i "s|/home/[^/]*/\.arc_icon.png|$HOME/.arc_icon.png|g" "$ARC_CONF"
+fi
+
 if [ -f "$ARC_CONF" ]; then
   echo "🧭 Loading ArcMenu config..."
   dconf load /org/gnome/shell/extensions/arcmenu/ < "$ARC_CONF"
