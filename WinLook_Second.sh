@@ -14,6 +14,18 @@ ARC_CONF="$WIN_DIR/Arc_Menu_Win"
 DIN_CONF="$WIN_DIR/Desktop_Icons_NG_Win"  # Optional config for Desktop Icons NG
 
 # === 1. Load GNOME extension settings ===
+
+echo "⏳ Waiting for GNOME extensions to initialize..."
+sleep 10
+
+if [ -f "$DTP_CONF" ]; then
+  echo "🔧 Loading Dash to Panel config..."
+  dconf load /org/gnome/shell/extensions/dash-to-panel/ < "$DTP_CONF"
+else
+  echo "⚠️ Dash_To_Panel_Win config not found."
+fi
+
+
 if [ -f "$DTP_CONF" ]; then
   echo "🔧 Loading Dash to Panel config..."
   dconf load /org/gnome/shell/extensions/dash-to-panel/ < "$DTP_CONF"
